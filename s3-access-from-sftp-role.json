@@ -8,7 +8,7 @@
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::whereabout.place"
+                "arn:aws:s3:::<bucket-name>"
             ]
         },
         {
@@ -16,7 +16,7 @@
             "Effect": "Allow",
             "Action": "s3:*Object",
             "Resource": [
-                "arn:aws:s3:::whereabout.place/*"
+                "arn:aws:s3:::<bucket-name>/*"
             ]
         }
     ]
