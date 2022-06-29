@@ -2,14 +2,26 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "PublicReadGetObject",
+            "Sid": "ListObjectsInBucket",
             "Effect": "Allow",
-            "Principal": "*",
             "Action": [
-                "s3:GetObject"
+                "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::<your-s3-bucket>/*"
+                "arn:aws:s3:::<bucket-name>"
+            ]
+        },
+        {
+            "Sid": "AllObjectActions",
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*",
+                "s3-object-lambda:Get*",
+                "s3-object-lambda:List*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<bucket-name>/*"
             ]
         }
     ]
